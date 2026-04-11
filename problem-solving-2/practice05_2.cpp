@@ -2,23 +2,21 @@
 #include <string>
 using namespace std;
 
-string IntTOstr(int long long num) {
-    string number;
-    number = to_string(num);
-    return number;
-}
+ 
 
-int Calc_length(string num) {
+int Calc_length(int num) {
+    string number = to_string(num);
     int count = 0;
-    for (int i = 0; num[i] != '\0'; i++) {
+    for (int i = 0; number[i] != '\0'; i++) {
         count++;
     }
     return count;
 }
 
-void print_num(string num) {
+void print_num(int num) {
+    string number = to_string(num);
     for (int i = 0; i < Calc_length(num); i++) {
-        cout << num[i] << " " << endl;
+        cout << number[i] << endl;
     }
 }
 
@@ -26,7 +24,7 @@ int main() {
     int long long number;
     cout << "Enter a Number: ";
     cin >> number; 
-    print_num(IntTOstr(number));
+    print_num(number);
 
     return 0;
 }
